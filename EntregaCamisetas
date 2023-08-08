@@ -1,0 +1,31 @@
+using System;
+
+namespace EntregaCamisetas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+            int[] tamanhos = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            int P = int.Parse(Console.ReadLine());
+            int M = int.Parse(Console.ReadLine());
+
+            int countPequeno = 0;
+            int countMedio = 0;
+
+            for (int i = 0; i < N; i++)
+            {
+                if (tamanhos[i] == 1)
+                    countPequeno++;
+                else
+                    countMedio++;
+            }
+
+            if (countPequeno <= P && countMedio <= M)
+                Console.WriteLine("S");
+            else
+                Console.WriteLine("N");
+        }
+    }
+}
